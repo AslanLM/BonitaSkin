@@ -1,0 +1,758 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  animation: enhance-hero linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 360px;
+}
+
+.left,
+.right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+}
+
+.left {
+  background-color: #d6baa3;
+  left: 0%;
+  width: 0%;
+}
+
+.right {
+  background-color: #24262b;
+  right: 0%;
+  width: 100%;
+}
+
+/* header */
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: space-between;
+  transition: 0.7s all;
+  padding: 30px 40px;
+  z-index: 12;
+  transition: 0.6s ease-in;
+}
+
+ul {
+  list-style: none;
+}
+
+.active {
+  padding: 20px 40px;
+}
+
+.logo {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Montserrat";
+  font-size: 2em;
+  letter-spacing: 1px;
+  font-weight: 400;
+  transition: 1.2s;
+  padding: 2px 6px;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.active2 .logo {
+  color: #000;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.38rem;
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  font-family: "Montserrat";
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: 0.7s;
+}
+
+.active2 ul li a {
+  color: #000;
+}
+
+.shop {
+  font-size: 1.2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: 0.1em solid #fff;
+  margin-left: 50px;
+  padding: 0 15px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.7s;
+}
+
+.shop:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.active2 .shop {
+  border-color: #000;
+}
+
+.active2 .shop:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+header ul li a img {
+  position: relative;
+  height: 44px;
+  width: 22px;
+  margin: 0 15px;
+  text-decoration: none;
+  transition: 0.7s;
+  filter: invert(100%) sepia(0%) saturate(2%) hue-rotate(148deg)
+    brightness(115%) contrast(101%);
+}
+
+header ul li a img:hover {
+  transform: scale(1.1);
+}
+
+.active2 ul li a img {
+  filter: invert(0%) sepia(14%) saturate(7500%) hue-rotate(243deg)
+    brightness(107%) contrast(99%);
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  margin-left: 10px;
+  background: transparent;
+  gap: 0.45rem;
+  cursor: pointer;
+}
+
+button > div {
+  display: flex;
+  background: #fff;
+  height: 2px;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: bottom;
+}
+
+button > div:first-child {
+  width: 80%;
+}
+
+button > div:last-child {
+  width: 100%;
+}
+
+button:hover div:first-child {
+  transform: translateY(5px);
+  width: 100%;
+}
+
+button:hover div:last-child {
+  transform: translateY(-5px);
+}
+
+button.clickeado {
+  gap: 0;
+}
+
+button.clickeado div:first-child {
+  transform: rotate(45deg);
+  width: 100%;
+}
+
+button.clickeado div:last-child {
+  transform: rotate(-45deg);
+  width: 100%;
+}
+
+.active2 button > div {
+  background: #000;
+}
+
+/* hero */
+
+.hero{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 12%;
+}
+
+.video-container {
+  height: 75vh;
+  width: 0vw;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.texthero {
+  position: absolute;
+  top: 50%;
+  right: 16%;
+  transform: translateY(-50%);
+}
+
+.texthero h1 {
+  font-size: 5.5rem;
+  color: #fff;
+  font-family: "Roxborough CF Thin";
+}
+
+.texthero p {
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.name {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5.5rem;
+  font-family: "Roxborough CF Thin";
+  color: transparent;
+  -webkit-text-stroke: 2px #fff;
+}
+
+.social-container {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.social {
+  display: flex;
+}
+
+.social li {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 5px;
+  margin-right: 1rem;
+}
+
+.decoration1 {
+  position: absolute;
+  bottom: -90px;
+  left: -70px;
+  width: 280px;
+  height: 280px;
+  background: transparent;
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.decoration2 {
+  position: absolute;
+  bottom: -100px;
+  left: 110px;
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  border: 2px solid;
+  border-color: rgba(255, 255, 255, 0.7);
+  z-index: 0;
+}
+
+@keyframes enhance-hero {
+  to {
+    height: 50vh;
+  }
+}
+
+/* introduction section */
+
+#main{
+  position: relative;
+  background-color: #fff;
+  z-index: 10;
+}
+
+.introduction {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  gap: 5rem;
+  background: linear-gradient(to bottom, #eddcd0 70%, #fff 30%);
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  z-index: 10;
+}
+
+.intro-img {
+  height: 680px;
+  width: 0px;
+  margin-left: 15px;
+}
+
+.intro-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.textreveal{
+  overflow: hidden;
+}
+
+.intro-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  margin-right: 15px;
+  gap: 20px;
+}
+
+.intro-title-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.intro-title {
+  font-size: 4em;
+  font-family: "Roxborough CF Thin";
+  color: #000;
+}
+
+.p-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.introduction .decoration1,
+.introduction .decoration2{
+  border-color: rgba(0, 0, 0, 0.7);
+}
+
+.introduction .decoration1{
+  left: 90%;
+  top: 55%;
+}
+
+.introduction .decoration2{
+  left: 95%;
+  top: 80%;
+}
+
+/* carousel*/
+
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80vh;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 4rem;
+  width: 75%;
+  height: 75%;
+  background-color: #363d46;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 70%;
+}
+
+.wrapper-holder {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.slide-img {
+  position: relative;
+  bottom: 28px;
+  display: flex;
+  height: 480px;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.slide-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.slide-text h2 {
+  font-size: 2rem;
+  font-family: "Roxborough CF Thin";
+  color: #d6baa3;
+  text-transform: uppercase;
+}
+
+.slide-text p {
+  color: #fff;
+}
+
+.slide-text a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #d6baa3;
+  height: auto;
+  font-size: 1.2em;
+  transition: 0.3s all;
+}
+
+.slide-text img {
+  height: 30px;
+  width: 30px;
+  filter: invert(91%) sepia(17%) saturate(761%) hue-rotate(319deg)
+    brightness(88%) contrast(88%);
+  transition: 0.3s all;
+}
+
+.slide-text a:hover img {
+  border: 1px solid #000;
+  border-radius: 50%;
+  transform: scale(1.1) translateX(0);
+  transition: transform 0.3s;
+}
+
+#slider1,
+#slider2,
+#slider3{
+  display: flex;
+}
+
+.button-slider1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 30px;
+}
+
+.button-slider2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 30px;
+}
+
+.button-slider1 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  text-align: center;
+  text-decoration: none;
+  color: #f3ede0;
+  font-size: 15px;
+  font-family: "Roxborough CF Thin";
+  margin: 0;
+}
+
+.button-slider2 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  text-align: center;
+  text-decoration: none;
+  color: #f3ede0;
+  font-size: 15px;
+  font-family: "Roxborough CF Thin";
+  margin: 0;
+}
+
+.button-slider1 button img {
+  transform: rotate(-90deg);
+}
+
+.button-slider2 button img {
+  transform: rotate(-90deg);
+}
+
+.button-slider1 img {
+  height: 44px;
+  width: 22px;
+  filter: invert(91%) sepia(17%) saturate(761%) hue-rotate(319deg)
+    brightness(88%) contrast(88%);
+}
+
+.button-slider2 img {
+  height: 44px;
+  width: 22px;
+  filter: invert(91%) sepia(17%) saturate(761%) hue-rotate(319deg)
+    brightness(88%) contrast(88%);
+}
+
+.decoration-arrow1 {
+  position: absolute;
+  top: 50%;
+  left: -85px;
+  background: #d6baa3;
+  height: 2px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.decoration-arrow2 {
+  position: absolute;
+  top: 50%;
+  right: -85px;
+  background: #d6baa3;
+  height: 2px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.contact {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 646px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cont-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+  height: 626px;
+  width: 50%;
+  background-color: #f0f0ea;
+}
+
+.cont-text h1 {
+  font-family: "Roxborough CF Thin";
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.input-data {
+  display: flex;
+  height: 40px;
+  width: 400px;
+  position: relative;
+}
+
+.input-data input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-family: "Montserrat";
+}
+
+.input-data img {
+  height: 40px;
+  width: 22px;
+  border-bottom: 1px solid #000;
+}
+
+.input-data img:hover {
+  filter: invert(91%) sepia(17%) saturate(761%) hue-rotate(319deg)
+    brightness(88%) contrast(88%);
+}
+
+.input-data a:hover input {
+  border-bottom: 1px solid #d6baa3;
+}
+
+.cont-img {
+  margin-right: 20px;
+  height: 626px;
+  width: auto;
+}
+
+.cont-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1170px;
+  margin: auto;
+}
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer {
+  position: relative;
+  background-color: #24262b;
+  padding: 70px 0;
+  z-index: 10;
+}
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-family: "Roxborough CF Thin";
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #d6baa3;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: #ffffff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links{
+  display: flex;
+  align-items: center;
+}
+.footer-col .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+
+
+/*responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
