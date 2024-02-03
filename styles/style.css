@@ -357,6 +357,10 @@ video {
   z-index: 10;
 }
 
+.img-container{
+  width: 65%;
+}
+
 .intro-img {
   height: 680px;
   width: 0px;

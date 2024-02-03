@@ -126,8 +126,8 @@ function textReveal() {
 
   gsap.from([".textreveal h2", ".textreveal p"], {
     duration: 1.8,
-    delay: 0.4,
-    y: 160,
+    delay: 1,
+    y: 300,
     stagger: 0.2,
     ease: Expo.easeInOut,
     scrollTrigger: {
