@@ -8,6 +8,21 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  background-color: transparent;
+  overflow: hidden;
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #222;
+  border-radius: 50px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #d6baa3;
+}
+
 .home {
   position: relative;
   width: 100%;
