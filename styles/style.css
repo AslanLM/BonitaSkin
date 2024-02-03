@@ -767,6 +767,14 @@ ul {
 /*responsive*/
 
 @media (max-width: 1120px) and (max-height: 550px){
+
+  .name{
+    display: none;
+  }
+
+  .texthero{
+    right: 5%;
+  }
   .contact{
     height: 494px;
   }
@@ -784,6 +792,8 @@ ul {
   .input-data{
     padding: 0 20px;
   }
+
+  
 
 }
 
